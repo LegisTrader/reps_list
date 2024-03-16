@@ -1,0 +1,13 @@
+apiVersion: v2
+name: legislators-processor
+description: A Helm chart for deploying the Legislators Processor application
+version: 1.0.0
+appVersion: 1.0.0
+maintainers:
+  - name: travbz
+    email: employee@company.com
+keywords:
+  - legislators
+  - kubernetes
+  - helm
+  - stonks

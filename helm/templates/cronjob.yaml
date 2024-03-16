@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-pyjob
+  namespace: {{ .Values.namespace.name }}
+spec:
+  schedule: "{{ .Values.cronjob.schedule }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: pyjob
+            image: {{ .Values.cronjob.image }}
+            imagePullPolicy: "{{ .Values.cronjob.imagePullPolicy }}"
+            command:
+              - "python"
+            args:
+              - "/app/cron.py"
+            envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-postgres-config
+            - secretRef:
+                name: {{ .Release.Name }}-postgres
+          restartPolicy: OnFailure
