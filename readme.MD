@@ -18,7 +18,7 @@ The microservice performs the following tasks:
 
 ## Background
 
-The primary motivation behind maintaining this list is to facilitate the tracking of recent stock trades made by legislators. This information is crucial for copy trading, where another microservice iterates through the list and scrapes congressional stock trading disclosure data by member [Official Disclosure Service](https://github.com/Travbz/official-disclosures). The scraped data is stored in a database, and the microservice looks for differences between previously known disclosures and new data.
+The primary motivation behind maintaining this list is to facilitate the tracking of recent stock trades made by legislators. This information is crucial for copy trading, where another microservice iterates through the list and scrapes congressional stock trading disclosure data by member [Official Disclosure Service](https://github.com/LegisTrader/disclosures). The scraped data is stored in a database, and the microservice looks for differences between previously known disclosures and new data.
 
 If new data is detected, it signifies that a trade has been placed, triggering a payload to be sent to the notification service. The notification service alerts users about new disclosures, allowing them to take necessary actions.
 

@@ -2,7 +2,7 @@ namespace:
   name: rep-list
 
 cronjob:
-  schedule: "0 * * * *"
+  schedule: "0 0 * * 0"  # Run at midnight every Sunday
   image: travops87/officiallist:latest
 
 postgres:
