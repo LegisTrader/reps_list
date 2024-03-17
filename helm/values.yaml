@@ -1,21 +1,14 @@
 namespace:
-  name: official-list
+  name: rep-list
 
 cronjob:
   schedule: "0 * * * *"
   image: travops87/officiallist:latest
 
 postgres:
-  replicas: 1
-  image: postgres:latest
+  namespace: postgres
   database: official
   username: admin
   password: admin
-  port: 5432
   service:
-    type: NodePort
     port: 5432
-  storage:
-    size: 2Gi
-    hostPath: /data/postgres
-    className: standard

@@ -9,3 +9,22 @@ Chart.lock
 helper.txt
 hack.sh
 *.sh
+
+*.tgz
+*.lock
+charts/
+releases/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan
+*.tfbackend
+*.hcl
+*.pem
+*.pub
+*.crt
+*.key
+*.log

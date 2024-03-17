@@ -11,23 +11,3 @@ spec:
     port: 80
     targetPort: 5000
   type: ClusterIP
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: {{ .Release.Name }}-postgres
-  namespace: {{ .Values.namespace.name }}
-  labels:
-    app: postgres
-    role: service
-spec:
-  selector:
-    app: postgres
-    role: service
-  type: {{ .Values.postgres.service.type }}
-  ports:
-    - name: postgres
-      port: {{ .Values.postgres.service.port }}
-      targetPort: 5432
-      protocol: TCP

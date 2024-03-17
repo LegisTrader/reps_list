@@ -4,5 +4,5 @@ metadata:
   name: {{ .Release.Name }}-postgres-config
   namespace: {{ .Values.namespace.name }}
 data:
-  POSTGRES_HOST: "{{ .Release.Name }}-postgres"
+  POSTGRES_HOST: "postgres-postgres.{{ .Values.postgres.namespace }}.svc.cluster.local"
   POSTGRES_PORT: "{{ .Values.postgres.service.port }}"
